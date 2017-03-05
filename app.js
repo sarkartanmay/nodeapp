@@ -2,6 +2,7 @@ var express = require('express');
 var parser = require('body-parser');
 var path = require('path');
 var app = express();
+app.set('port',(process.env.PORT || 5000));
 app.use(parser.urlencoded({ extended: false }))
 app.use(parser.json())
 
@@ -32,7 +33,6 @@ app.post('/student/add',function(req,res){
 	//res.json(student);
 	
 });
-app.listen(5000,function(){
-	console.log('server running on port 5000');
+app.listen(app.get('port'),function(){
+	console.log('server running on port '+app.get('port'));
 })
-
