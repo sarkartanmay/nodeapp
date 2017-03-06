@@ -22,7 +22,8 @@
 			<li> <%= err.msg %> </li>
 		<% }) %>
 		</ul>
-	<%}else{%>
+	<%}%>		
+	<% if(userValue!=null){ %>	
 		<div> Data Entered as <%= userValue.first %>  <%= userValue.last %> </div>
 	<%}%>	
 </body>
