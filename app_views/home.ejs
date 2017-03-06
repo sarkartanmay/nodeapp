@@ -16,10 +16,14 @@
 		</tr>
 	</table>
 	</form>
-	
-	<% if(userValue!=null){ %>	
+	<% if(errors){ %>	
+		<ul>
+		<% errors.forEach(function( err){ %>
+			<li> <%= err.msg %> </li>
+		<% }) %>
+		</ul>
+	<%}else{%>
 		<div> Data Entered as <%= userValue.first %>  <%= userValue.last %> </div>
-	<%}%>
-	
+	<%}%>	
 </body>
 <% include footer %>
